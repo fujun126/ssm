@@ -17,7 +17,7 @@
            <td>id</td>
            <td>name</td>
            <td>pwd</td>
-        
+            <td>操作</td>
         </tr>
       
         <c:forEach items="${userList}" var="u">
@@ -25,7 +25,7 @@
               <td>${u.id}</td>
               <td>${u.name}</td>
               <td>${u.pwd}</td>
-           
+            <td><a href="getUserById.action?id=${u.id}">修改</a></td>
            </tr>
         
         </c:forEach>

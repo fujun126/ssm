@@ -12,34 +12,49 @@
 		http://www.springframework.org/schema/aop/spring-aop-3.2.xsd 
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
-		
+		  
+		  
+		  
+		  <context:component-scan base-package="com.ssm"></context:component-scan>
 		
 		 <!--  处理映射器 
 		  -->
 		  
 		  <bean   class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
 		
-		  <bean  class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		 
+	<!-- 	  <bean  class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		     <property name="mappings">
 		        <props>
 		        <prop key="/uu1.action">f1</prop>
 		        <prop key="/uu2.action">f1</prop>
+		        <prop key="/uu3.action">f2</prop>
 		     
 		        </props>
 		     </property>
 		  
-		  </bean>
+		  </bean> -->
 		  
 		 <!--  处理适配器 
 		  -->
 		  
 		  <bean  class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" ></bean>
+		   <bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"></bean>
+		
 		 <!--  视图解析器 
 		  -->
-		  <bean  class="org.springframework.web.servlet.view.InternalResourceViewResolver"> </bean>
+		  <bean  class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		     <property name="prefix" value="/WEB-INF/jsp/"></property>
+		     <property name="suffix" value=".jsp"></property>
+		  
+		  </bean>
+		
+		 <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>
+		<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>
 		
 		
-		
-		  <bean id="f1" name="/us.action"  class="com.ssm.action.UserAction"></bean>
-		
+		<!--   <bean id="f1" name="/us.action"  class="com.ssm.action.UserAction"></bean>
+		  <bean  id="f2" class="com.ssm.action.UserAction1"></bean>
+		 -->
+		  
 		</beans>
