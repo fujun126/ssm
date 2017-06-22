@@ -29,4 +29,12 @@ public class UserAction3 {
 		 mv.setViewName("user");
 		 return  mv;
 	 }
+	 
+	 @RequestMapping("/updateUser")
+	 public  String   updateUser(User user){
+		 userDao.updateUser(user);
+		 return "redirect:queryUser.action";
+	 }
+	 
+	 
 }

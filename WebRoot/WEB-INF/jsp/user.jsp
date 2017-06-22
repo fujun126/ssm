@@ -9,11 +9,9 @@
 <body>
 
      
-  <form action="">
-      
+  <form action="updateUser.action"  method="post">
       <p>
         <input type="hidden" name="id"  value="${user.id}">
-      
       </p>
       <p>
       <input  type="text"  name="name"  value="${user.name}" />
@@ -21,8 +19,9 @@
      <p>
       <input  type="text"  name="pwd" value="${user.pwd}">
      </p>
-
-    
+     <p>
+      <input  type="submit"  value="提交修改">
+     </p>
   </form>
 
 

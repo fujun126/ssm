@@ -68,7 +68,25 @@ public class UserDao {
 		return null;
  }
 	
+	public  void  updateUser(User user){
+		 for (int i = 0; i < list.size(); i++) {
+				User e = list.get(i);
+				if(e.getId().equals(user.getId())){
+					list.set(i, user);
+					break;
+				}
+			}
+	}
 	
+	public  void  deleteUser(User user){
+		 for (int i = 0; i < list.size(); i++) {
+				User e = list.get(i);
+				if(e.getId().equals(user.getId())){
+					list.remove(i);
+					break;
+				}
+			}
+	}
 	
 	
 }
