@@ -78,15 +78,18 @@ public class UserDao {
 			}
 	}
 	
-	public  void  deleteUser(User user){
+	public  void  deleteUser(Integer  id){
 		 for (int i = 0; i < list.size(); i++) {
 				User e = list.get(i);
-				if(e.getId().equals(user.getId())){
+				if(e.getId().equals(id)){
 					list.remove(i);
 					break;
 				}
 			}
 	}
 	
+	public  void  addUser(User user){
+		list.add(user);
+	}
 	
 }
